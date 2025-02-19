@@ -36,7 +36,7 @@ export default function Navbar() {
 
                     <ul className='lg:flex items-center gap-10 text-xl hidden'>
                         <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/about'}>About</Link></li>
+                        <li><a href='#'>About</a></li>
                         <li><a href="#">Favorites</a></li>
                         <li><a href="#">Categories</a></li>
                     </ul>
