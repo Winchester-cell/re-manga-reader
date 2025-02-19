@@ -56,20 +56,31 @@ const Manga = () => {
                 manga && coverFile && (
                     <div className='w-full h-full flex flex-col lg:flex-row border-[2px] border-[#ffffff10] rounded-3xl backdrop-blur-sm overflow-hidden overflow-y-auto'>
 
-                        
+
                         <Link to={'/'} className='lg:hidden text-[14px] absolute top-3 right-3 border-2 border-gray-400 rounded-full p-3 bg-zinc-900 flex items-center'><IoMdArrowRoundBack />Back Home</Link>
 
-                        <img
-                            src={`${proxyAddress}https://uploads.mangadex.org/covers/${mangaID}/${coverFile}&quality=40`}
-                            alt="Cover"
-                            className='lg:h-full lg:w-[25dvw] h-[25dvh] xsm:w-full xsm:h-[40dvh] w-full sm:w-full sm:h-[44dvh] aspect-video lg:aspect-[9/16]  object-cover object-top'
-                        />
+                        <div className="relative lg:h-full lg:w-[25dvw] h-[25dvh] xsm:w-full xsm:h-[40dvh] w-full sm:w-full sm:h-[44dvh] overflow-hidden">
+
+                            <div
+                                className="absolute inset-0 bg-cover bg-center blur-md lg:hidden"
+                                style={{
+                                    backgroundImage: `url('${proxyAddress}https://uploads.mangadex.org/covers/${mangaID}/${coverFile}&quality=5')`
+                                }}
+                            ></div>
+
+                           
+                            <img
+                                src={`${proxyAddress}https://uploads.mangadex.org/covers/${mangaID}/${coverFile}&quality=40`}
+                                alt="Cover"
+                                className="relative lg:h-full lg:w-[25dvw] h-[25dvh] xsm:w-full xsm:h-[40dvh] w-full sm:w-full sm:h-[44dvh] aspect-video lg:aspect-[9/16] object-contain lg:object-cover object-top"
+                            />
+                        </div>
 
                         <div className='px-5 py-3 w-full lg:w-[69%]'>
                             <h2 className='w-full font-bold line-clamp-1 text-[clamp(20px,2.5dvw,36px)] text-wrap'>{manga.attributes.title.en}</h2>
                             <h2 className='text-[clamp(14px,1.5dvw,30px)] font-semibold mt-1 line-clamp-1'>Author : {authorName}</h2>
                             <h2 className='text-[clamp(14px,1.3dvw,30px)] font-semibold my-3 line-clamp-1'>Description : </h2>
-                            <p className=' border-[#ffffff1c] border-2 rounded-2xl pt-3 px-3 pb-1 line-clamp-5 text-[clamp(10px,1.05dvw,16px)] text-balance desText'>{manga.attributes.description.en}</p>
+                            <p className='line-clamp-5 text-[clamp(10px,1.05dvw,16px)] text-balance desText px-2 lg:px-6'>{manga.attributes.description.en}</p>
                             <div className='flex flex-col gap-2 my-5'>
                                 <h2>Genre :</h2>
                                 <ul className='flex items-center gap-2 select-none flex-wrap'>
