@@ -50,7 +50,7 @@ const Manga = () => {
     const authorName = useMangaAuthor(authorID)
 
     return (
-        <div className='w-[100dvw] flex flex-col gap-2 h-[100dvh] px-10 py-3 lg:px-32 lg:py-10 text-gray-300 relative'>
+        <div className='w-[100dvw] flex flex-col gap-5 h-[100dvh] px-10 py-3 lg:px-32 lg:py-10 text-gray-300 relative'>
             <Link to={'/'} className='hidden border-2 border-gray-400 rounded-full p-2 bg-zinc-900 lg:flex items-center justify-center w-1/6'><IoMdArrowRoundBack />Back Home</Link>
             {
                 // main page
@@ -77,7 +77,7 @@ const Manga = () => {
                             />
                         </div>
 
-                        <div className='px-5 py-3 w-full lg:w-[69%]'>
+                        <div className='px-5 py-3 w-full lg:w-[69%] flex flex-col flex-grow lg:flex-grow-0'>
                             <h2 className='w-full font-bold line-clamp-1 text-[clamp(20px,2.5dvw,36px)] text-wrap'>{manga.attributes.title.en}</h2>
                             <h2 className='text-[clamp(14px,1.5dvw,30px)] font-semibold mt-1 line-clamp-1'>Author : {authorName}</h2>
                             <h2 className='text-[clamp(14px,1.3dvw,30px)] font-semibold my-3 line-clamp-1'>Description : </h2>
@@ -92,7 +92,7 @@ const Manga = () => {
                             </div>
                             <h2 className='mb-5'>Year : {manga.attributes.year}</h2>
 
-                            <div className='w-full flex justify-center lg:mt-[1.7dvh]'><button onClick={() => setIsChapMenuOpen(true)} className='bg-gray-300 text-zinc-800 font-bold flex items-center gap-2 py-3 px-5 rounded-full hover:scale-105 transition-all duration-300 text-[clamp(16px,1.8dvw,30px)]'>Read Book <FaBookOpenReader /></button></div>
+                            <div className='w-full  flex justify-center items-center flex-grow'><button onClick={() => setIsChapMenuOpen(true)} className='h-[clamp(40px,5dvw,55px)] bg-gray-300 text-zinc-800 font-bold flex items-center gap-2 py-3 px-5 rounded-full hover:scale-105 transition-all duration-300 text-[clamp(16px,1.8dvw,30px)]'>Read Book <FaBookOpenReader /></button></div>
                         </div>
                     </div>
                 )
