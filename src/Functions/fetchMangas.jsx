@@ -3,7 +3,7 @@ const fetchMangas = async (searchedParam , offset) => {
     try {
 
         if (searchedParam) {
-            const response = await fetch(`${proxyApi}/manga?title=${searchedParam}&limit=12&offset=${offset}`)
+            const response = await fetch(`${proxyApi}/manga?title=${searchedParam}&limit=12&offset=${offset}&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`)
 
             if (!response.ok) {
                 throw new Error('Failed to Fetch')
