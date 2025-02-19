@@ -46,9 +46,10 @@ export default function Chapter() {
               {/* <span>{index+1} / {chapterFiles.length}</span> */}
               <img className='w-[97dvw] sm:w[75dvw] lg:w-[50dvw]' key={index} loading='lazy' src={`${proxyAddress}${baseUrl}/data-saver/${hash}/${chapterFile}&quality=40`} alt="" />
             </div>
-            )
+          )
         })
       }
+      <button onClick={backHomeFunc} className='my-5 text-lg gap-2 flex justify-center items-center font-bold text-gray-300 bg-zinc-900 xl:px-20 xl:py-3 px-7 py-2  rounded-full border-2 border-gray-300 hover:scale-110 duration-500 transition-all' > <IoIosArrowBack /> <span>Back To MangaPage</span>   </button>
 
     </div>
   )
