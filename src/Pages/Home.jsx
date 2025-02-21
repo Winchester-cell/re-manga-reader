@@ -42,6 +42,12 @@ const Home = () => {
         }
     }
 
+    const onChangeHandler = (e)=>{
+        if(inputRegex.test(e.target.value)){
+            setInputText(e.target.value)
+        }
+    }
+
     return (
         <div className='min-h-[100vh] relative text-gray-300'>
             <Navbar></Navbar>
@@ -51,7 +57,7 @@ const Home = () => {
                 </div>
                 <div className='flex flex-col lg:flex-row items-center gap-2 lg:gap-7'>
                     <div className='border-2 border-gray-500 rounded-full flex items-center px-3 backdrop-blur-sm'>
-                        <input type="text" onKeyDown={keyDownHandler} onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
+                        <input type="text" onKeyDown={keyDownHandler} onChange={onChangeHandler} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
                         <IoIosArrowBack onClick={setPageHandler} className='cursor-pointer' />
                     </div>
                     <div className='flex items-center gap-2 '>
