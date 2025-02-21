@@ -51,7 +51,7 @@ const Home = () => {
                 </div>
                 <div className='flex flex-col lg:flex-row items-center gap-2 lg:gap-7'>
                     <div className='border-2 border-gray-500 rounded-full flex items-center px-3 backdrop-blur-sm'>
-                        <input type="text" onKeyDown={keyDownHandler} onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
+                        <input type="tel" inputMode='numeric' pattern='[0-9]*' maxLength={3} onKeyDown={keyDownHandler} onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
                         <IoIosArrowBack onClick={setPageHandler} className='cursor-pointer' />
                     </div>
                     <div className='flex items-center gap-2 '>
@@ -74,7 +74,7 @@ const Home = () => {
                 <div className='flex flex-col lg:flex-row items-center gap-2 lg:gap-7'>
                     
                     <div className='border-2 border-gray-500 rounded-full flex items-center px-3 backdrop-blur-sm'>
-                        <input type="text" onKeyDown={keyDownHandler} onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
+                        <input type="tel" inputMode='numeric' pattern='[0-9]*' maxLength={3} onKeyDown={keyDownHandler} onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder='Jump to page ...' className='bg-transparent block w-28 outline-none placeholder:text-sm' />
                         <IoIosArrowBack onClick={setPageHandler} className='cursor-pointer' />
                     </div>
                     <div className='flex items-center gap-2 '>
